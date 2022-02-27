@@ -2,17 +2,40 @@ textarea {
     min-height: 400px;
 }
 
-.email {
+.emails {
     display: flex;
     flex-direction: row;
     padding: 5px;
     border: 1px solid black;
+    /* cursor: pointer; */
 }
 
-.email .sender {
+.emails .sender {
     padding-right: 10px;
 }
 
-.email .timestamp {
+.emails .timestamp {
     margin-left: auto;
+}
+
+.emailsRead {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    background-color: rgb(216, 216, 216);
+    border: 1px solid black;
+    /* cursor: pointer; */
+}
+
+.emailsRead .sender {
+    padding-right: 10px;
+}
+
+.emailsRead .timestamp {
+    margin-left: auto;
+}
+
+.email .buttons {
+    display: flex;
+    gap: 3px;
 }
