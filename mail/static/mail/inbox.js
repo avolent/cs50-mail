@@ -141,7 +141,7 @@ function reply_email(email) {
   document.querySelector('#compose-view').style.display = 'block';
 
   // Prefill inputs based on email being replied to.
-  document.querySelector('#compose-recipients').value = `${email.recipients}`;
+  document.querySelector('#compose-recipients').value = `${email.sender}`;
   // check if email already replied to and add "re:" based on that.
   if (email.subject.indexOf('re:') == -1) {
     document.querySelector('#compose-subject').value = `re: ${email.subject}`;
