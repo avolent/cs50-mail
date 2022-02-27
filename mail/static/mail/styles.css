@@ -1,5 +1,6 @@
 textarea {
     min-height: 400px;
+    white-space: pre-line;
 }
 
 .emails {
@@ -7,7 +8,7 @@ textarea {
     flex-direction: row;
     padding: 5px;
     border: 1px solid black;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 .emails .sender {
@@ -24,7 +25,7 @@ textarea {
     padding: 5px;
     background-color: rgb(216, 216, 216);
     border: 1px solid black;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 .emailsRead .sender {
@@ -38,4 +39,8 @@ textarea {
 .email .buttons {
     display: flex;
     gap: 3px;
+}
+
+.email .body {
+    white-space: pre-line;
 }
