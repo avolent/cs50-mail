@@ -152,12 +152,12 @@ function reply_email(email) {
   document.querySelector('#compose-body').value = `\n\nOn ${email.timestamp} ${email.sender} wrote: \n${email.body}`;
 }
 
-function archive_email(email) {
+async function archive_email(email) {
   // Grab the archive button and store
   const button = document.querySelector('#archive')
   // Archive email if not already archive. Else unarchive.
   if (email.archived === false) {
-    fetch(`/emails/${email.id}`, {
+     await fetch(`/emails/${email.id}`, {
       method: 'PUT',
       body: JSON.stringify({
           archived: true
@@ -168,7 +168,7 @@ function archive_email(email) {
     button.innerHTML = "Unarchive";
   }
   else {
-    fetch(`/emails/${email.id}`, {
+    await fetch(`/emails/${email.id}`, {
       method: 'PUT',
       body: JSON.stringify({
           archived: false
@@ -176,7 +176,8 @@ function archive_email(email) {
     })
     console.log(`Unarchived email ID: ${email.id}`);
     button.innerHTML = "Archive";
+
   }
   // Reload Inbox
-  load_mailbox('inbox');
+  load_mailbox('inbox')
 }
